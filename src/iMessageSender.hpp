@@ -7,5 +7,5 @@ class IMessageSender
 {
 public:
 
-	virtual void sendEmail(const std::shared_ptr<IPerson>& person, const std::string& message) = 0;
+	virtual void sendMessage(const std::shared_ptr<IPerson>& person, const std::string& message) = 0;
 };

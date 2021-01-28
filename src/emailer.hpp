@@ -7,8 +7,8 @@ class Emailer : public IMessageSender
 {
 public:
 
-	void sendEmail(const std::shared_ptr<IPerson>& person, const std::string& message)
+	void sendMessage(const std::shared_ptr<IPerson>& person, const std::string& message)
 	{
-		std::cout<<"Simulating sending an email to "<<person->getEmailAddress().c_str()<<std::endl;
+		std::cout<<"Sending an email to "<<person->getEmailAddress().c_str()<<" to notify that "<<message.c_str()<<std::endl;
 	}
 };
