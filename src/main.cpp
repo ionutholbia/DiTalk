@@ -1,19 +1,21 @@
-#include "chore.hpp"
-#include "logger.hpp"
-#include "emailer.hpp"
-#include "person.hpp"
+#include "factory.hpp"
 #include <iostream>
 
 int main(void)
 {
-	std::shared_ptr<IPerson> owner = 
-		std::make_shared<Person>("Ionut", "Holbia", "iholbia@ditalk.com", "77770000");
+	auto owner = Factory::createPerson();
+	owner->setFirstName("Ionut");
+	owner->setFirstName("Holbia");
+	owner->setFirstName("iholbia@ditalk.com");
+	owner->setFirstName("77770000");
 
-	Chore chore("Read some books.", owner);
+	auto chore = Factory::createChore();
+	chore->setChoreName("Read some books.");
+	chore->setOwner(owner);
 
-	chore.performedWork(3);
-	chore.performedWork(1.5);
-	chore.completeChore();
+	chore->performedWork(3);
+	chore->performedWork(1.5);
+	chore->completeChore();
 
 	return 0;
 }

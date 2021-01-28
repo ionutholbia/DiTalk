@@ -3,9 +3,9 @@
 #include <iostream>
 #include "iLogger.hpp"
 
-class Logger : ILogger
+class Logger : public ILogger
 {
-public:
+public:	
 	void Log(const std::string& message)
 	{
 		std::cout<<"Write to Console: "<<message<<std::endl;

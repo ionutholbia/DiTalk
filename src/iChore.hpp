@@ -7,8 +7,10 @@ class IChore
 {
 public:
 	virtual std::string getChoreName() = 0;
+	virtual void setChoreName(const std::string& choreName) = 0;
 
 	virtual std::shared_ptr<IPerson> getOwner() = 0;
+	virtual void setOwner(const std::shared_ptr<IPerson>& owner) = 0;
 
 	virtual double getHoursWorked() = 0;
 
