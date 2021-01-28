@@ -1,2 +1,2 @@
-add_executable(main main.cpp)
-target_link_libraries(main ${CONAN_LIBS})
+add_executable(demo main.cpp)
+target_link_libraries(demo ${CONAN_LIBS})

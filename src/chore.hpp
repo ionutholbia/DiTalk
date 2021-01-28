@@ -1,6 +1,8 @@
 #pragma once
 
 #include "person.hpp"
+#include "logger.hpp"
+#include "emailer.hpp"
 #include <memory>
 
 class Chore
@@ -13,7 +15,8 @@ private:
 	bool isComplete_;
 
 public:
-	Chore(/* args */);
+	Chore(const std::string choreName, const std::shared_ptr<Person>& owner) :
+		choreName_(choreName), owner_(owner) { }
 
 	std::string getChoreName() { return choreName_; }
 
@@ -22,4 +25,23 @@ public:
 	double getHoursWorked() { return hoursWorked_; }
 
 	bool isComplete() { return isComplete_; }
+
+	void performedWork(double hours)
+	{
+		hoursWorked_ += hours;
+		
+		Logger log;
+		log.Log(std::string(std::to_string(hours) + " hours performed work on " + choreName_));
+	}
+
+	void completeChore()
+	{
+		isComplete_ = true;
+
+		Logger log;
+		log.Log(std::string("Completed ") + choreName_);
+
+		Emailer emailer;
+		emailer.sendEmail(owner_, std::string("The chore ") + choreName_ + " is complete.");
+	}
 };
