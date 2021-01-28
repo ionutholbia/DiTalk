@@ -3,6 +3,7 @@
 #include "chore.hpp"
 #include "logger.hpp"
 #include "emailer.hpp"
+#include "texter.hpp"
 #include "person.hpp"
 
 class Factory
@@ -25,6 +26,6 @@ public:
 
 	static std::shared_ptr<IMessageSender> createMessageSender()
 	{
-		return std::make_shared<Emailer>();
+		return std::make_shared<Texter>();
 	} 
 };
