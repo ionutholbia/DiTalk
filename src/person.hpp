@@ -15,12 +15,16 @@ public:
 		firstName_(firstName), lastName_(lastName), phoneNumber_(phoneNumber), emailAddress_(emailAddress) { }
 	
 	std::string getFirstName() { return firstName_; }
+	void setFirstName(const std::string& firstName) { firstName_ = firstName; }
 
 	std::string getLastName() { return lastName_; }
+	void setLastName(const std::string& lastName) { lastName_ = lastName; }
 
 	std::string getPhoneNumber() { return phoneNumber_; }
+	void setPhoneNumber(const std::string& phoneNumber) { phoneNumber_ = phoneNumber; }
 
 	std::string getEmailAddress() { return emailAddress_; }
+	void setEmailAddress(const std::string& emailAddress) { emailAddress_ = emailAddress; }
 };
 
 	
