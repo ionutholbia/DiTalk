@@ -1,4 +1,7 @@
 #include <iostream>
+#include "chore.hpp"
+#include "logger.hpp"
+#include "emailer.hpp"
 
 int main(void)
 {

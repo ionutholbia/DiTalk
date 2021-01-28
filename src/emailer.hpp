@@ -1,0 +1,15 @@
+#pragma once
+
+#include "person.hpp"
+#include <memory>
+#include <iostream>
+
+class Emailer
+{
+public:
+
+	void sendEmail(std::shared_ptr<Person> person, const std::string& message)
+	{
+		std::cout<<"Simulating sending an email to "<<person->getEmailAddress();
+	}
+};
