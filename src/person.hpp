@@ -10,10 +10,7 @@ private:
 	std::string phoneNumber_;
 	std::string emailAddress_;
 
-public:
-	Person(const std::string& firstName, const std::string& lastName, const std::string& phoneNumber, const std::string& emailAddress) :
-		firstName_(firstName), lastName_(lastName), phoneNumber_(phoneNumber), emailAddress_(emailAddress) { }
-	
+public:	
 	std::string getFirstName() { return firstName_; }
 	void setFirstName(const std::string& firstName) { firstName_ = firstName; }
 

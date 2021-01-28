@@ -5,10 +5,16 @@
 
 int main(void)
 {
-	std::shared_ptr<Person> owner = 
-		std::make_shared<Person>("Ionut", "Holbia", "iholbia@ditalk.com", "77770000");
+	std::shared_ptr<Person> owner = std::make_shared<Person>();
+	owner->setFirstName("Ionut");
+	owner->setLastName("Holbia");
+	owner->setPhoneNumber("77770000");
+	owner->setEmailAddress("iholbia@ditalk.com");
 
-	Chore chore("Read some books.", owner);
+
+	Chore chore;
+	chore.setChoreName("Read some books.");
+	chore.setOwner(owner);
 
 	chore.performedWork(3);
 	chore.performedWork(1.5);

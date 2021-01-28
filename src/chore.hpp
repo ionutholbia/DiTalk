@@ -15,12 +15,11 @@ private:
 	bool isComplete_;
 
 public:
-	Chore(const std::string choreName, const std::shared_ptr<Person>& owner) :
-		choreName_(choreName), owner_(owner) { }
-
 	std::string getChoreName() { return choreName_; }
+	void setChoreName(const std::string& choreName) { choreName_ = choreName; }
 
 	std::shared_ptr<Person> getOwner() { return owner_; }
+	void setOwner(const std::shared_ptr<Person>& owner) { owner_ = owner; }
 
 	double getHoursWorked() { return hoursWorked_; }
 
