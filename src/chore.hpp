@@ -43,6 +43,6 @@ public:
 
 		logger_->Log(std::string("Completed ") + choreName_);
 
-		messageSender_->sendEmail(owner_, std::string("The chore ") + choreName_ + " is complete.");
+		messageSender_->sendMessage(owner_, std::string("The chore ") + choreName_ + " is complete.");
 	}
 };
