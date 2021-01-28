@@ -1,26 +1,25 @@
 #pragma once
 
-#include "person.hpp"
 #include "logger.hpp"
 #include "emailer.hpp"
-#include <memory>
+#include "iChore.hpp"
 
-class Chore
+class Chore : public IChore
 {
 private:
 
 	std::string choreName_;
-	std::shared_ptr<Person> owner_;
+	std::shared_ptr<IPerson> owner_;
 	double hoursWorked_;
 	bool isComplete_;
 
 public:
-	Chore(const std::string choreName, const std::shared_ptr<Person>& owner) :
+	Chore(const std::string choreName, const std::shared_ptr<IPerson>& owner) :
 		choreName_(choreName), owner_(owner) { }
 
 	std::string getChoreName() { return choreName_; }
 
-	std::shared_ptr<Person> getOwner() { return owner_; }
+	std::shared_ptr<IPerson> getOwner() { return owner_; }
 
 	double getHoursWorked() { return hoursWorked_; }
 

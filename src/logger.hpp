@@ -1,8 +1,9 @@
 #pragma once
 
 #include <iostream>
+#include "iLogger.hpp"
 
-class Logger
+class Logger : ILogger
 {
 public:
 	void Log(const std::string& message)

@@ -1,8 +1,8 @@
 #pragma once
 
-#include <string>
+#include "iPerson.hpp"
 
-class Person
+class Person : public IPerson
 {
 private:
 	std::string firstName_;
