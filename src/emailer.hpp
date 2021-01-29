@@ -3,12 +3,14 @@
 #include "person.hpp"
 #include <memory>
 #include <iostream>
+#include "iPerson.hpp"
+#include "iMessageSender.hpp"
 
-class Emailer
+class Emailer : public IMessageSender
 {
 public:
 
-	void sendEmail(const std::shared_ptr<Person>& person, const std::string& message)
+	void sendMessage(const std::shared_ptr<IPerson>& person, const std::string& message)
 	{
 		std::cout<<"Sending an email to "<<person->getEmailAddress().c_str()<<" to notify that "<<message.c_str()<<std::endl;
 	}
